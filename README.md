@@ -10,5 +10,5 @@ Summarize BRICS countries economies
 ![LifeExpectancyAtBirth_Male_Years](https://github.com/LNshuti/brics/assets/13305262/fb8e08d2-4dcf-4b90-b43a-46be818c3178)
 
 
-**Debt Service on External Debt**
+**Debt Service on External Debt in Billions USD**
 ![Debt Service on External Debt in USD](https://github.com/LNshuti/brics/assets/13305262/d15f8318-d823-4dd2-8f06-fbec3542363e)
