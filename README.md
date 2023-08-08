@@ -12,3 +12,6 @@ Summarize BRICS countries economies
 
 **Debt Service on External Debt in Billions USD**
 ![Debt Service on External Debt in USD](https://github.com/LNshuti/brics/assets/13305262/d15f8318-d823-4dd2-8f06-fbec3542363e)
+
+**Debt Service, USA**
+![image](https://github.com/LNshuti/brics/assets/13305262/acd3b748-657a-4c59-b6ac-798bc134c37a)
