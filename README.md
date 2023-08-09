@@ -12,5 +12,8 @@ Summarize BRICS countries economies
 **Figure 3: Debt Service on External Debt in Billions USD**
 ![Debt Service on External Debt in USD](https://github.com/LNshuti/brics/assets/13305262/d15f8318-d823-4dd2-8f06-fbec3542363e)
 
-**Figure 5: Brazil Exports**
+**Figure 4: Brazil Exports**
 ![image](https://github.com/LNshuti/brics/assets/13305262/5e304b99-db5f-4ac0-9abb-35a2a9c7ec6e)
+
+**Figure 5: India Exports**
+![image](https://github.com/LNshuti/brics/assets/13305262/da6d8877-afc2-47dd-994d-b769aca256ef)
