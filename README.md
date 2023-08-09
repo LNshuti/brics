@@ -15,5 +15,5 @@ Summarize BRICS countries economies
 **Figure 4: Brazil Exports**
 ![image](https://github.com/LNshuti/brics/assets/13305262/5e304b99-db5f-4ac0-9abb-35a2a9c7ec6e)
 
-**Figure 5: India Exports**
+**Figure 5: India Exports. 638 Billion USD in 2021**
 ![image](https://github.com/LNshuti/brics/assets/13305262/da6d8877-afc2-47dd-994d-b769aca256ef)
