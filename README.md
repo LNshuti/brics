@@ -28,4 +28,3 @@ Summarize BRICS(Brazil, Russia, India, China, and South Africa) countries' econo
 ![image](https://github.com/LNshuti/brics/assets/13305262/76627156-9b65-4f86-be36-a1e2aabb0513)
 
 
-# BRICS-Adjacents
