@@ -18,6 +18,8 @@ Summarize BRICS(Brazil, Russia, India, China, and South Africa) countries' econo
 **Figure 5: Russian Exports. 560 Billion USD**
 ![image](https://github.com/LNshuti/brics/assets/13305262/ea20d7cc-d83e-4e0c-a4ce-1e94c5de1904)
 
-
 **Figure 6: India Exports. 638 Billion USD**
 ![image](https://github.com/LNshuti/brics/assets/13305262/da6d8877-afc2-47dd-994d-b769aca256ef)
+
+**Figure 7: China Exports. Billion USD**
+![image](https://github.com/LNshuti/brics/assets/13305262/32b4e3dc-ce43-4473-b6e8-96e68334be3b)
