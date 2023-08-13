@@ -3,6 +3,10 @@ Summarize BRICS(Brazil, Russia, India, China, and South Africa) countries' econo
 
 The five countries comprising the *nucleus* of BRICS exported a combined **5,380 Billion USD worth** of Goods and Services.  
 
+
+![](output/eci_ranking-1995-2020-change.gif)  
+ 
+
 **Figure 1: Food Exports as a % of all Exports**
 ![image](https://github.com/LNshuti/brics/assets/13305262/5334f5d0-8cd4-40c1-861d-ec2b8a65621c)
 

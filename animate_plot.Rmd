@@ -20,6 +20,7 @@ library(arrow) # to write parquet files
 library(gganimate)
 library(dplyr)
 library(ggplot2)
+library(gifski)
 ```
 
 ## Load data
@@ -96,7 +97,7 @@ country_mapping <- c(
   AUS = "Australia", 
   CAN = "Canada", 
   ITA = "Italy",
-  CGB = "Great Britain"
+  GBR = "Great Britain"
 )
 
 # Convert the result to a tibble
@@ -127,13 +128,21 @@ filtered_data <- result_tibble %>%
 
 
 ```{r}
-p <- ggplot(filtered_data, aes(x = year, y = hs_eci_rank, group = code, color = code)) +
+p_brics <- 
+  ggplot(filtered_data %>% 
+           filter(geopol_alliance == "BRICS"),
+         aes(x = year, y = hs_eci_rank, group = code, color = code)) +
   geom_line() +
   geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
   labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
   theme_minimal() +
   theme(legend.position = "none") + # Remove the legend
-  transition_reveal(year)
+  transition_reveal(year) 
 
-animate(p)
+animate(p_brics, nframes = 25,end_pause = 3,duration=10, renderer = gifski_renderer(paste0('output/eci_ranking-1995-2020-change.gif')))
+
+
+p_g7 <- 
+  
+  
 ```
