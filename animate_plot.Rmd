@@ -134,7 +134,7 @@ p_brics_img <-
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
   #geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
-  labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
+  labs(title = "", x = "Year", y = "") +
   theme_minimal() #+
   #theme(legend.position = "none")  # Remove the legend
 
@@ -152,7 +152,7 @@ p_g7_img <-
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
   #geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
-  labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
+  labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "") +
   theme_minimal() +
   theme(legend.position = "none") # Remove the legend
   
