@@ -131,7 +131,7 @@ filtered_data <- eci_rankings_tibble %>%
 library(gganimate)
 
 # Set the output dimensions
-output_width <- 800
+output_width <- 1200
 output_height <- 400
 
 p_brics_img <- 
