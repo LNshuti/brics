@@ -135,8 +135,8 @@ p_brics_img <-
   geom_line() +
   #geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
   labs(title = "", x = "Year", y = "") +
-  theme_minimal() #+
-  #theme(legend.position = "none")  # Remove the legend
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove the legend
 
 p_brics_gif <- 
   p_brics_img +
