@@ -139,7 +139,7 @@ p_brics_img <-
            filter(geopol_alliance == "BRICS"),
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
-  labs(title = "BRICS", x = "Year", y = "") +
+  labs(title = "**BRICS**", x = "Year", y = "") +
   theme_minimal() +
   theme(legend.position = "none")  # Remove the legend
 
@@ -158,7 +158,7 @@ p_g7_img <-
            filter(geopol_alliance == "G7"),
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
-  labs(title = "G7", x = "Year", y = "") +
+  labs(title = "**BRICS**", x = "Year", y = "") +
   theme_minimal() +
   theme(legend.position = "none") # Remove the legend
   
