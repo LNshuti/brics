@@ -2,6 +2,11 @@
 
 The five countries comprising BRICS exported a combined **5,380 Billion USD worth** of Goods and Services in 2021.  
 
+# Tutorial
+
+<iframe src="https://www.loom.com/embed/4c68739f1d1e4e87b938893c8de06eaa?sid=55dcc7a9-55cc-4f11-b4dd-3b4976e6d661" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+
+
 **Figure 0: Economic Complexity Ranking**
 ![](output/eci_ranking_brics-1995-2020-change.gif)  
 ![](output/eci_ranking_g7-1995-2020-change.gif)
@@ -30,9 +35,3 @@ The five countries comprising BRICS exported a combined **5,380 Billion USD wort
 
 **Figure 8: South Africa. 147 Billion USD**
 ![image](https://github.com/LNshuti/brics/assets/13305262/76627156-9b65-4f86-be36-a1e2aabb0513)
-
-
-# Tutorial
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/4c68739f1d1e4e87b938893c8de06eaa?sid=55dcc7a9-55cc-4f11-b4dd-3b4976e6d661" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
