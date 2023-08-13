@@ -129,6 +129,7 @@ filtered_data <- eci_rankings_tibble %>%
 
 ```{r}
 library(gganimate)
+library(glue)
 
 # Set the output dimensions
 output_width <- 1200
@@ -145,7 +146,7 @@ p_brics_img <-
 
 p_brics_gif <- 
   p_brics_img +
-  geom_text(aes(label = country_name), vjust = -1) +
+  geom_text(aes(label = glue("{country_name}, Rank {hs_eci_rank}")), vjust = -1) +
   transition_reveal(year) +
   coord_cartesian(clip = 'off')  # Prevent clipping of text labels
   
@@ -158,13 +159,13 @@ p_g7_img <-
            filter(geopol_alliance == "G7"),
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
-  labs(title = "**BRICS**", x = "Year", y = "") +
+  labs(title = "**G7**", x = "Year", y = "") +
   theme_minimal() +
   theme(legend.position = "none") # Remove the legend
   
 p_g7_gif <-
   p_g7_img +   
-  geom_text(aes(label = country_name), vjust = -1) +
+  geom_text(aes(label = glue("{country_name}, Rank {hs_eci_rank}")), vjust = -1) +
   transition_reveal(year) +
   coord_cartesian(clip = 'off')  # Prevent clipping of text labels
 
@@ -172,5 +173,4 @@ animate(p_g7_gif, nframes = 25, end_pause = 3, duration = 10,
         width = output_width, height = output_height,
         renderer = gifski_renderer(paste0('output/eci_ranking_g7-1995-2020-change.gif')))
 
-  
 ```
