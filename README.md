@@ -3,7 +3,10 @@
 The five countries comprising BRICS exported a combined **5,380 Billion USD worth** of Goods and Services in 2021.  
 
 
-![](output/eci_ranking-1995-2020-change.gif)  
+![](output/eci_ranking_brics-1995-2020-change.gif)  
+ 
+ 
+ ![](output/eci_ranking_g7-1995-2020-change.gif)
  
 
 **Figure 1: Food Exports as a % of all Exports**

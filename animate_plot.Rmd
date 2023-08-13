@@ -82,7 +82,7 @@ file_op <- file_handler$new()
 file_op$convert_and_load_files(c("data/rankings.dta"), db)
 
 # Assuming db is already connected and ready to query
-result <- db$query_db("SELECT * FROM rankings")
+eci_rankings <- db$query_db("SELECT * FROM rankings")
 
 brics <- c("BRA", "RUS", "IND", "CHN","ZAF")
 
@@ -100,49 +100,67 @@ country_mapping <- c(
   GBR = "Great Britain"
 )
 
-# Convert the result to a tibble
-result_tibble <- 
-  as_tibble(result) %>%
+# Convert the eci_rankings to a tibble
+eci_rankings_tibble <- 
+  as_tibble(eci_rankings) %>%
   filter(code %in% c("USA", "CHN", "BRA", "FRA", "ZAF", "IND", "RUS",
                      "AUS", "CAN", "ITA", "GBR")) %>% 
   mutate(country_name =country_mapping[code]) %>% 
   mutate(geopol_alliance = ifelse(code %in% brics, "BRICS", "G7"))
 
 # Optional: Print the tibble
-print(result_tibble)
+print(eci_rankings_tibble)
 ```
 
 ## Exploratory Data Analysis
 
 ```{r echo=FALSE}
-latest_year <- max(result_tibble$year)
+latest_year <- max(eci_rankings_tibble$year)
 top_countries <-
-  result_tibble %>%
+  eci_rankings_tibble %>%
   filter(year == latest_year) %>%
   arrange(hs_eci_rank) %>%
   select(code)
 
-filtered_data <- result_tibble %>%
+filtered_data <- eci_rankings_tibble %>%
   filter(code %in% top_countries$code)
 ```
 
 
 ```{r}
-p_brics <- 
+p_brics_img <- 
   ggplot(filtered_data %>% 
            filter(geopol_alliance == "BRICS"),
-         aes(x = year, y = hs_eci_rank, group = code, color = code)) +
+         aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
-  geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
+  #geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
   labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
-  theme_minimal() +
-  theme(legend.position = "none") + # Remove the legend
+  theme_minimal() #+
+  #theme(legend.position = "none")  # Remove the legend
+
+p_brics_gif <- 
+  p_brics_img +
+  geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
   transition_reveal(year) 
 
-animate(p_brics, nframes = 25,end_pause = 3,duration=10, renderer = gifski_renderer(paste0('output/eci_ranking-1995-2020-change.gif')))
+animate(p_brics_gif, nframes = 25,end_pause = 3,duration=10, renderer = gifski_renderer(paste0('output/eci_ranking_brics-1995-2020-change.gif')))
 
 
-p_g7 <- 
+p_g7_img <- 
+  ggplot(filtered_data %>% 
+           filter(geopol_alliance == "G7"),
+         aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
+  geom_line() +
+  #geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
+  labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
+  theme_minimal() +
+  theme(legend.position = "none") # Remove the legend
   
+p_g7_gif <-
+  p_g7_img +   
+  geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
+  transition_reveal(year) 
+
+animate(p_g7_gif, nframes = 25,end_pause = 3,duration=10, renderer = gifski_renderer(paste0('output/eci_ranking_g7-1995-2020-change.gif')))  
   
 ```
