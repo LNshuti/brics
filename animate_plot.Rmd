@@ -141,7 +141,7 @@ p_brics_img <-
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
   labs(title = "BRICS", x = "Year", y = "") +
-  theme_minimal() +
+  ggthemes::theme_tufte() +
   theme(legend.position = "none")  # Remove the legend
 
 p_brics_gif <- 
@@ -160,7 +160,7 @@ p_g7_img <-
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
   labs(title = "G7", x = "Year", y = "") +
-  theme_minimal() +
+  ggthemes::theme_tufte() +
   theme(legend.position = "none") # Remove the legend
   
 p_g7_gif <-
