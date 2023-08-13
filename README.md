@@ -1,7 +1,6 @@
-# BRICS
-Summarize BRICS(Brazil, Russia, India, China, and South Africa) countries' economies in 2021
+# BRICS: Brazil, Russia, India, China, and South Africa
 
-The five countries comprising the *nucleus* of BRICS exported a combined **5,380 Billion USD worth** of Goods and Services.  
+The five countries comprising BRICS exported a combined **5,380 Billion USD worth** of Goods and Services in 2021.  
 
 
 ![](output/eci_ranking-1995-2020-change.gif)  
