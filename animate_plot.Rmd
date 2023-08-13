@@ -1,0 +1,139 @@
+---
+title: "Rank Complexity and Forecast Growth"
+author: "Leonce Nshuti"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load Required Libraries
+
+```{r}
+# Load necessary libraries
+library(DBI)
+library(duckdb)
+library(haven) # to read .dta files
+library(arrow) # to write parquet files
+library(gganimate)
+library(dplyr)
+library(ggplot2)
+```
+
+## Load data
+```{r}
+# Define a class to handle database operations
+db_handler <- R6::R6Class(
+  "db_handler",
+  
+  public = list(
+    connection = NULL,
+    
+    initialize = function(dbdir = ":memory:") {
+      self$connection <- dbConnect(duckdb::duckdb(), dbdir = dbdir, read_only = FALSE)
+    },
+    
+    create_table = function(query) {
+      dbExecute(self$connection, query)
+    },
+    
+    write_to_db = function(dataframe, table_name) {
+      dbWriteTable(self$connection, table_name, dataframe)
+    },
+    
+    query_db = function(query, params = NULL) {
+      dbGetQuery(self$connection, query, params)
+    },
+    
+    close_connection = function() {
+      dbDisconnect(self$connection)
+    }
+  )
+)
+
+# Define a class to handle file operations
+file_handler <- R6::R6Class(
+  "file_handler",
+  
+  public = list(
+    convert_and_load_files = function(dta_files, db_handler) {
+      for (file in dta_files) {
+        # Read .dta file
+        dta_data <- read_dta(file)
+        
+        # Convert to parquet
+        parquet_file <- gsub(".dta", ".parquet", file)
+        arrow::write_parquet(dta_data, parquet_file)
+        
+        # Register parquet with DuckDB
+        tbl_name <- tools::file_path_sans_ext(basename(file))
+        duckdb::duckdb_register(db_handler$connection, tbl_name, arrow::read_parquet(parquet_file))
+      }
+    }
+  )
+)
+
+# Example usage
+db <- db_handler$new(dbdir = "my-db.duckdb")
+file_op <- file_handler$new()
+file_op$convert_and_load_files(c("data/rankings.dta"), db)
+
+# Assuming db is already connected and ready to query
+result <- db$query_db("SELECT * FROM rankings")
+
+brics <- c("BRA", "RUS", "IND", "CHN","ZAF")
+
+country_mapping <- c(
+  USA = "United States",
+  ZAF = "South Africa",
+  CHN = "China",
+  BRA ="Brazil", 
+  IND = "India",
+  RUS = "Russia",
+  FRA = "France", 
+  AUS = "Australia", 
+  CAN = "Canada", 
+  ITA = "Italy",
+  CGB = "Great Britain"
+)
+
+# Convert the result to a tibble
+result_tibble <- 
+  as_tibble(result) %>%
+  filter(code %in% c("USA", "CHN", "BRA", "FRA", "ZAF", "IND", "RUS",
+                     "AUS", "CAN", "ITA", "GBR")) %>% 
+  mutate(country_name =country_mapping[code]) %>% 
+  mutate(geopol_alliance = ifelse(code %in% brics, "BRICS", "G7"))
+
+# Optional: Print the tibble
+print(result_tibble)
+```
+
+## Exploratory Data Analysis
+
+```{r echo=FALSE}
+latest_year <- max(result_tibble$year)
+top_countries <-
+  result_tibble %>%
+  filter(year == latest_year) %>%
+  arrange(hs_eci_rank) %>%
+  select(code)
+
+filtered_data <- result_tibble %>%
+  filter(code %in% top_countries$code)
+```
+
+
+```{r}
+p <- ggplot(filtered_data, aes(x = year, y = hs_eci_rank, group = code, color = code)) +
+  geom_line() +
+  geom_text(aes(label = country_name), vjust = -1) + # Add this line to append labels
+  labs(title = "Country’s Economic Complexity Index ranking", x = "Year", y = "Economic Complexity Index Rank") +
+  theme_minimal() +
+  theme(legend.position = "none") + # Remove the legend
+  transition_reveal(year)
+
+animate(p)
+```
