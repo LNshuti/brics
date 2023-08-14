@@ -68,6 +68,7 @@ These countries are not members of BRICS. They do, however, have established tra
 ![image](https://github.com/LNshuti/brics/assets/13305262/25001a6e-08c4-454d-acce-e55aa595411d)
 
 **10. Tunisia**
+![image](https://github.com/LNshuti/brics/assets/13305262/0c86a62f-0ee2-48a2-b447-980fbfbc96ce)
 
 # References 
 1. Brics+ countries exported a Billion USD to BRICS countries in 2021. 
