@@ -35,3 +35,21 @@ The five countries comprising BRICS exported a combined **5,380 Billion USD wort
 
 **Figure 8: South Africa. 147 Billion USD**
 ![image](https://github.com/LNshuti/brics/assets/13305262/76627156-9b65-4f86-be36-a1e2aabb0513)
+
+
+## BRICS "Plus"
+These countries are not members of BRICS. They do however have established trading relationships with BRICS countries, and some of them have already applied to join BRICS [1]. 
+
+1. Saudi Arabia
+2. United Arab Emirates
+3. Oman
+4. Qatar
+5. Bahrain
+6. Egypt
+7. Jordan
+8. Algeria
+9. Morocco
+10. Tunisia
+
+# References 
+1. 
