@@ -141,7 +141,7 @@ ggplot(filtered_data %>%
        aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
   labs(title = "BRICS", x = "Year", y = "") +
-  scale_y_continuous(breaks = seq(1, 100, by = 10), limits = c(1, 100)) +
+  scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
   ggthemes::theme_tufte() +
   theme(legend.position = "none")
 
@@ -161,7 +161,7 @@ p_g7_img <-
            filter(geopol_alliance == "G7"),
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line() +
-  scale_y_continuous(breaks = seq(1, 100, by = 10), limits = c(1, 100)) +
+  scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
   labs(title = "G7", x = "Year", y = "") +
   ggthemes::theme_tufte() +
   theme(legend.position = "none") # Remove the legend
