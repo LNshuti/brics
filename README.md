@@ -40,16 +40,34 @@ The five countries comprising BRICS exported a combined **5,380 Billion USD wort
 ## BRICS "Plus"
 These countries are not members of BRICS. They do, however, have established trading relationships with BRICS countries, and some of them have already applied to join BRICS [1]. 
 
-1. Saudi Arabia
-2. United Arab Emirates
-3. Oman
-4. Qatar
-5. Bahrain
-6. Egypt
-7. Jordan
-8. Algeria
-9. Morocco
-10. Tunisia
+**1. Saudi Arabia**
+![image](https://github.com/LNshuti/brics/assets/13305262/94b06266-a05c-4799-a570-a4543e631802)
+
+**2. United Arab Emirates**
+![image](https://github.com/LNshuti/brics/assets/13305262/f2d18882-9837-4e8b-b033-8decb3acf170)
+
+**3. Oman**
+![image](https://github.com/LNshuti/brics/assets/13305262/1ed0858a-e93e-4294-a45a-66efc426b7a0)
+
+**4. Qatar**
+![image](https://github.com/LNshuti/brics/assets/13305262/8bf8939d-bc63-4a19-8b75-365c04f32bc6)
+
+**5. Bahrain**
+![image](https://github.com/LNshuti/brics/assets/13305262/87c22ff7-2dec-41ee-b427-70d8dc447b76)
+
+**6. Egypt**
+![image](https://github.com/LNshuti/brics/assets/13305262/420bebeb-c7b6-4cf2-8f3e-c9815e5e3013)
+
+**7. Jordan**
+![image](https://github.com/LNshuti/brics/assets/13305262/fae334aa-6710-4b58-ae52-2938fa6b25a2)
+
+**8. Algeria**
+![image](https://github.com/LNshuti/brics/assets/13305262/47b65499-2686-4e8d-9cd9-9b5c7a14e5f2)
+
+**9. Morocco**
+![image](https://github.com/LNshuti/brics/assets/13305262/25001a6e-08c4-454d-acce-e55aa595411d)
+
+**10. Tunisia**
 
 # References 
 1. Brics+ countries exported a Billion USD to BRICS countries in 2021. 
