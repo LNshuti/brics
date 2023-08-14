@@ -38,7 +38,7 @@ The five countries comprising BRICS exported a combined **5,380 Billion USD wort
 
 
 ## BRICS "Plus"
-These countries are not members of BRICS. They do however have established trading relationships with BRICS countries, and some of them have already applied to join BRICS [1]. 
+These countries are not members of BRICS. They do, however, have established trading relationships with BRICS countries, and some of them have already applied to join BRICS [1]. 
 
 1. Saudi Arabia
 2. United Arab Emirates
@@ -52,4 +52,4 @@ These countries are not members of BRICS. They do however have established tradi
 10. Tunisia
 
 # References 
-1. 
+1. Brics+ countries exported a Billion USD to BRICS countries in 2021. 
