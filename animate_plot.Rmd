@@ -136,15 +136,20 @@ output_width <- 1200
 output_height <- 400
 
 p_brics_img <- 
-ggplot(filtered_data %>%
+  ggplot(filtered_data %>%
          filter(geopol_alliance == "BRICS"),
        aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
-  geom_line() +
+  geom_line(size = 1.5) +
   labs(title = "BRICS", x = "Year", y = "") +
   scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
+  theme_minimal(base_size = 14) +
   ggthemes::theme_tufte() +
-  theme(legend.position = "none")
-
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title = element_text(size = 16, face = "bold"),
+        plot.title = element_text(size = 18, face = "bold"),
+        panel.grid.major = element_line(color = "gray90"),
+        panel.grid.minor = element_blank())
 
 p_brics_gif <- 
   p_brics_img +
@@ -160,12 +165,18 @@ p_g7_img <-
   ggplot(filtered_data %>% 
            filter(geopol_alliance == "G7"),
          aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
-  geom_line() +
+  geom_line(size = 1.5) +
   scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
   labs(title = "G7", x = "Year", y = "") +
   ggthemes::theme_tufte() +
-  theme(legend.position = "none") # Remove the legend
-  
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title = element_text(size = 16, face = "bold"),
+        plot.title = element_text(size = 18, face = "bold"),
+        panel.grid.major = element_line(color = "gray90"),
+        panel.grid.minor = element_blank())
+
 p_g7_gif <-
   p_g7_img +   
   geom_text(aes(label = glue("{country_name}, Rank {hs_eci_rank}")), vjust = -1) +
