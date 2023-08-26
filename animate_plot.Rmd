@@ -138,7 +138,7 @@ library(glue)
 
 # Set the output dimensions
 output_width <- 1200
-output_height <- 400
+output_height <- 600
 
 p_brics_img <- 
   ggplot(filtered_data %>%
