@@ -143,13 +143,13 @@ p_brics_img <-
   labs(title = "BRICS", x = "Year", y = "") +
   scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
   theme_minimal(base_size = 14) +
-  ggthemes::theme_tufte() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title = element_text(size = 16, face = "bold"),
         plot.title = element_text(size = 18, face = "bold"),
         panel.grid.major = element_line(color = "gray90"),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank()) + 
+  ggthemes::theme_tufte() 
 
 p_brics_gif <- 
   p_brics_img +
@@ -168,14 +168,14 @@ p_g7_img <-
   geom_line(size = 1.5) +
   scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
   labs(title = "G7", x = "Year", y = "") +
-  ggthemes::theme_tufte() +
   theme_minimal(base_size = 14) +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title = element_text(size = 16, face = "bold"),
         plot.title = element_text(size = 18, face = "bold"),
         panel.grid.major = element_line(color = "gray90"),
-        panel.grid.minor = element_blank())
+        panel.grid.minor = element_blank()) + 
+    ggthemes::theme_tufte() 
 
 p_g7_gif <-
   p_g7_img +   
