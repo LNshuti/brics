@@ -97,14 +97,17 @@ country_mapping <- c(
   AUS = "Australia", 
   CAN = "Canada", 
   ITA = "Italy",
-  GBR = "Great Britain"
+  GBR = "Great Britain", 
+  ETH = "Ethiopia",
+  DZA = "Algeria",
+  ARE = "United Arab Emirates"
 )
 
 # Convert the eci_rankings to a tibble
 eci_rankings_tibble <- 
   as_tibble(eci_rankings) %>%
   filter(code %in% c("USA", "CHN", "BRA", "FRA", "ZAF", "IND", "RUS",
-                     "AUS", "CAN", "ITA", "GBR")) %>% 
+                     "AUS", "CAN", "ITA", "GBR", "ETH", "DZA", "ARE")) %>% 
   mutate(country_name =country_mapping[code]) %>% 
   mutate(geopol_alliance = ifelse(code %in% brics, "BRICS", "G7"))
 
