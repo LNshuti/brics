@@ -10,7 +10,7 @@ The five countries comprising BRICS exported a combined **5,4 Trillion USD worth
 **Figure 0: Economic Complexity Ranking**
 ![](output/eci_ranking_brics-1995-2020-change.gif)  
 ![](output/eci_ranking_g7-1995-2020-change.gif)
- 
+![](output/eci_ranking_bricsplus-1995-2020-change.gif) 
 
 **Figure 1: Life Expectancy at Birth**
 ![LifeExpectancyAtBirth_Male_Years](https://github.com/LNshuti/brics/assets/13305262/fb8e08d2-4dcf-4b90-b43a-46be818c3178)

@@ -23,7 +23,7 @@ library(ggplot2)
 library(gifski)
 ```
 
-## Load data
+## Define Helper Functions
 ```{r}
 # Define a class to handle database operations
 db_handler <- R6::R6Class(
@@ -75,7 +75,10 @@ file_handler <- R6::R6Class(
     }
   )
 )
+```
 
+## Load Data
+```{r}
 # Example usage
 db <- db_handler$new(dbdir = "my-db.duckdb")
 file_op <- file_handler$new()
@@ -85,6 +88,7 @@ file_op$convert_and_load_files(c("data/rankings.dta"), db)
 eci_rankings <- db$query_db("SELECT * FROM rankings")
 
 brics <- c("BRA", "RUS", "IND", "CHN","ZAF")
+brics_plus <- c(brics, c("ETH", "DZA", "ARE"))
 
 country_mapping <- c(
   USA = "United States",
@@ -97,21 +101,19 @@ country_mapping <- c(
   AUS = "Australia", 
   CAN = "Canada", 
   ITA = "Italy",
-  GBR = "Great Britain" #, 
-  #ETH = "Ethiopia",
-  #DZA = "Algeria",
-  #ARE = "United Arab Emirates"
+  GBR = "Great Britain", 
+  ETH = "Ethiopia",
+  DZA = "Algeria",
+  ARE = "United Arab Emirates"
 )
 
 # Convert the eci_rankings to a tibble
 eci_rankings_tibble <- 
   as_tibble(eci_rankings) %>%
   filter(code %in% c("USA", "CHN", "BRA", "FRA", "ZAF", "IND", "RUS",
-                     "AUS", "CAN", "ITA", "GBR" 
-                     #, "ETH", "DZA", "ARE"
-                     )) %>% 
+                     "AUS", "CAN", "ITA", "GBR", "ETH", "DZA", "ARE")) %>%
   mutate(country_name =country_mapping[code]) %>% 
-  mutate(geopol_alliance = ifelse(code %in% brics, "BRICS", "G7"))
+  mutate(geopol_alliance = ifelse(code %in% brics_plus, "BRICS Plus", "G7"))
 
 # Optional: Print the tibble
 print(eci_rankings_tibble)
@@ -142,11 +144,11 @@ output_height <- 800
 
 p_brics_img <- 
   ggplot(filtered_data %>%
-         filter(geopol_alliance == "BRICS"),
+         filter(geopol_alliance == "BRICS Plus"),
        aes(x = year, y = hs_eci_rank, group = code, color = country_name)) +
   geom_line(size = 1.5) +
-  labs(title = "BRICS", x = "Year", y = "") +
-  scale_y_continuous(breaks = seq(0, 100, by = 10), limits = c(0, 100)) +
+  labs(title = "BRICS Plus", x = "Year", y = "") +
+  scale_y_continuous(breaks = seq(0, 140, by = 20), limits = c(0, 140)) +
   theme_minimal(base_size = 16) +
   theme(legend.position = "none",
         text = element_text(size = 16),
@@ -165,7 +167,7 @@ p_brics_gif <-
   
 animate(p_brics_gif, nframes = 25, end_pause = 3, duration = 10,
         width = output_width, height = output_height,
-        renderer = gifski_renderer(paste0('output/eci_ranking_brics-1995-2020-change.gif')))
+        renderer = gifski_renderer(paste0('output/eci_ranking_bricsplus-1995-2020-change.gif')))
 
 p_g7_img <- 
   ggplot(filtered_data %>% 
