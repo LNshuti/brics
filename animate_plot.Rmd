@@ -88,7 +88,7 @@ file_op$convert_and_load_files(c("data/rankings.dta"), db)
 eci_rankings <- db$query_db("SELECT * FROM rankings")
 
 brics <- c("BRA", "RUS", "IND", "CHN","ZAF")
-brics_plus <- c(brics, c("ETH", "DZA", "ARE"))
+brics_plus <- c(brics, c("ETH", "DZA", "ARE", "SAU"))
 
 country_mapping <- c(
   USA = "United States",
@@ -104,14 +104,15 @@ country_mapping <- c(
   GBR = "Great Britain", 
   ETH = "Ethiopia",
   DZA = "Algeria",
-  ARE = "United Arab Emirates"
+  ARE = "United Arab Emirates", 
+  SAU = "Saudi Arabia"
 )
 
 # Convert the eci_rankings to a tibble
 eci_rankings_tibble <- 
   as_tibble(eci_rankings) %>%
   filter(code %in% c("USA", "CHN", "BRA", "FRA", "ZAF", "IND", "RUS",
-                     "AUS", "CAN", "ITA", "GBR", "ETH", "DZA", "ARE")) %>%
+                     "AUS", "CAN", "ITA", "GBR", "ETH", "DZA", "ARE", "SAU")) %>%
   mutate(country_name =country_mapping[code]) %>% 
   mutate(geopol_alliance = ifelse(code %in% brics_plus, "BRICS Plus", "G7"))
 
