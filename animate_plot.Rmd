@@ -182,7 +182,7 @@ p_g7_img <-
         panel.grid.major = element_line(color = "gray90"),
         panel.grid.minor = element_blank()) + 
   guides(color="none") +
-  ggthemes::theme_tufte(legend.position="none") 
+  ggthemes::theme_tufte() 
 
 p_g7_gif <-
   p_g7_img +   
