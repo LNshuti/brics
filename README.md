@@ -37,6 +37,9 @@ The five countries comprising BRICS exported a combined **5,4 Trillion USD worth
 ![image](https://github.com/LNshuti/brics/assets/13305262/76627156-9b65-4f86-be36-a1e2aabb0513)
 
 
+# BRICS EXPORTS 
+
+# BRICS IMPORTS 
 ## BRICS+
 These countries are not members of BRICS. They do, however, have established trading relationships with BRICS countries, and some of them have already applied to join BRICS [1]. 
 
